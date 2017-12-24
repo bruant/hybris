@@ -1,7 +1,8 @@
 <html>
 	<body>
-		<h1>training</h1>
-		Welcome to my extension.
+		<h1>Epam Hybris training course</h1>
+
+		<a href="./search">Product search</a>
 	</body>
 </html>
 
