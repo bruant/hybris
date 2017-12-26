@@ -1,0 +1,17 @@
+In an item type definition the 'partof' modifier describes the parent-child relationship in the case of the child becomes useless if the parent ceases to exist.
+When the parent gets deleted then the child gets deleted as well. This is the cascade delete behavior.
+
+Impex provides the possibility to insert parent and child with partof relation but it has to be done with separate lines. This is the case when we have to have a special reference 
+between different lines: the document id.
+
+Example (taken from Hybris WIKI page): customer and payment address where payment address has a back-reference to the user.
+
+INSERT Customer; uid[unique=true]; ...; defaultPaymentAddress( &addrID ); ...
+; andi; ...; addr1 ; ...
+ 
+INSERT Address; &addrID ; owner( Customer.uid ); ...
+; addr1 ; andi ; ...
+
+
+We are not able to use the field(uid) reference as we don't know the address pk when we write the Impex file.
+
