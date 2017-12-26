@@ -50,5 +50,19 @@
 		</form>
 
     </div>
+<h2>Search for primary image description</h2>
+
+    <div style="width: 70%; background-color: white;" id="boxshadow">
+		<form data-ng-submit="submit()" data-ng-controller="PrimaryImageController">
+				<h3>{{headerText}}</h3>
+				<p>Code:    <input type="text" data-ng-model="code"></p>
+				<p>Catalog (e.g.: Default): <input type="text" data-ng-model="catalog"></p>
+				<p>Version (e.g.: Staged/Online): <input type="text" data-ng-model="version"></p>
+				<input id="searchPrimaryImage" type="image" value="Submit"  src="${pageContext.request.contextPath}/img/search.jpg" width="10%" height="10%" ng-class="style"/><br>
+				 <pre>Form data ={{list}}</pre>
+		</form>
+
+    </div>
+
   </body>
 </html>

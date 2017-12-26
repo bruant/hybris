@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.training.facade.PrimaryImageDescriptionFacade;
 import org.training.facade.ProductSearchFacade;
 import org.training.model.ProductSearchModel;
 
@@ -30,6 +31,9 @@ public class ProductSearchController
 	@Autowired
 	private ProductSearchFacade facade;
 
+	@Autowired
+	private PrimaryImageDescriptionFacade imageDescriptionFacade;
+
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String processGetRequest(final Model model)
 	{
@@ -43,6 +47,17 @@ public class ProductSearchController
 	{
 		LOG.info(input.toString());
 		input.setProduct(facade.searchByCodeInCatalog(input.getCode(), input.getCatalog(), input.getVersion()));
+		LOG.info(input.toString());
+		return input;
+	}
+
+	@RequestMapping(value = "/searchPrimaryImage", method = RequestMethod.POST)
+	@ResponseBody
+	public ProductSearchModel processPostRequestPrimaryImage(@RequestBody final ProductSearchModel input)
+	{
+		LOG.info(input.toString());
+		input.setProduct(
+				imageDescriptionFacade.getPrimaryImageDescription(input.getCode(), input.getCatalog(), input.getVersion()));
 		LOG.info(input.toString());
 		return input;
 	}
