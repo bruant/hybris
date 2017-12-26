@@ -1,0 +1,7 @@
+$catalogVersion=catalogversion(catalog(id),version)
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en];description[lang=en];$catalogVersion
+;Test category;Test category name;Test category description;Default:Staged
+
+UPDATE Product;code[unique=true];$catalogVersion[unique=true];supercategories(code,$catalogVersion)[mode=append]
+;1234567;Default:Staged;Test category:Default:Staged
