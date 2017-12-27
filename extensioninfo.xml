@@ -19,12 +19,14 @@
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
       <!-- <requires-extension name="cms"/> -->         
       
+      <requires-extension name="platformhmc"/>
 
       <coremodule generated="true" manager="org.training.jalo.TrainingManager" packageroot="org.training"/>
 
       <webmodule jspcompile="false" webroot="/training"/>
 					
-	
+	  <hmcmodule extensionclassname="org.training.hmc.HmcExtension"/>
+     		
 
    </extension>
       

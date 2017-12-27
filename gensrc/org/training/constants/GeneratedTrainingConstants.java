@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2017.12.26. 8:06:42                         ---
+ * --- Generated at 2017.12.28. 0:11:41                         ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -14,6 +14,13 @@ package org.training.constants;
 public class GeneratedTrainingConstants
 {
 	public static final String EXTENSIONNAME = "training";
+	public static class Attributes
+	{
+		public static class User
+		{
+			public static final String DATEOFBIRTH = "dateOfBirth".intern();
+		}
+	}
 	
 	protected GeneratedTrainingConstants()
 	{

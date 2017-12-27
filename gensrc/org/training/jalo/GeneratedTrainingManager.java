@@ -1,14 +1,19 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2017.12.26. 8:06:42                         ---
+ * --- Generated at 2017.12.28. 0:11:41                         ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
 
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.security.Principal;
+import de.hybris.platform.jalo.user.User;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.TrainingConstants;
@@ -23,6 +28,9 @@ public abstract class GeneratedTrainingManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("dateOfBirth", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -35,6 +43,42 @@ public abstract class GeneratedTrainingManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>User.dateOfBirth</code> attribute.
+	 * @return the dateOfBirth - Date of birth - Hybris course
+	 */
+	public Date getDateOfBirth(final SessionContext ctx, final User item)
+	{
+		return (Date)item.getProperty( ctx, TrainingConstants.Attributes.User.DATEOFBIRTH);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>User.dateOfBirth</code> attribute.
+	 * @return the dateOfBirth - Date of birth - Hybris course
+	 */
+	public Date getDateOfBirth(final User item)
+	{
+		return getDateOfBirth( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>User.dateOfBirth</code> attribute. 
+	 * @param value the dateOfBirth - Date of birth - Hybris course
+	 */
+	public void setDateOfBirth(final SessionContext ctx, final User item, final Date value)
+	{
+		item.setProperty(ctx, TrainingConstants.Attributes.User.DATEOFBIRTH,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>User.dateOfBirth</code> attribute. 
+	 * @param value the dateOfBirth - Date of birth - Hybris course
+	 */
+	public void setDateOfBirth(final User item, final Date value)
+	{
+		setDateOfBirth( getSession().getSessionContext(), item, value );
 	}
 	
 	@Override

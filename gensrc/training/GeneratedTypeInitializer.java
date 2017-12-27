@@ -59,9 +59,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
+				single_createattr_User_dateOfBirth();
+			
 
 	}
 
+	
+	public void single_createattr_User_dateOfBirth() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"User", 
+					"dateOfBirth",  
+					null,
+					"java.util.Date",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
 	
 
 
@@ -74,10 +93,44 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		// performCreateObjects
 	
 	
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"User",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_User_dateOfBirth();
+		
 	}
 
 
 		
+						public void single_setAttributeProperties_User_dateOfBirth() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"User", 
+								"dateOfBirth",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
 }
 
 	
