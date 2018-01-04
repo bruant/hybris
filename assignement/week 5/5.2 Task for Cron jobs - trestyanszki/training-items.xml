@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 	<itemtypes>
-		<itemtype code="User" autocreate="false">
-			<attributes>
-				<attribute qualifier="dateOfBirth" type="java.util.Date">
-					<description>Date of birth - Hybris course</description>
-					<persistence type="property" />
-				</attribute>
-			</attributes>
-		</itemtype>
 
 		<itemtype code="ExportProductCronJob" extends="CronJob" jaloclass="org.training.cron.ExportProductCronJob" autocreate="true"
 			generate="true">
@@ -16,7 +8,7 @@
 				<attribute qualifier="xDaysToGoOffline" type="int">
 					<modifiers read="true" write="true" optional="false" />
 					<defaultvalue>Integer.valueOf(5)</defaultvalue>
-					<description>All products that younger than this value in days will be exported</description>
+					<description>All products that goes offline within X days will be exported. X is 5 by default.</description>
 					<persistence type="property" />
 				</attribute>
 				<attribute qualifier="impexFile" type="java.lang.String">

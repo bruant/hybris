@@ -1,0 +1,8 @@
+#  -------------------------------------------------------
+"#% impex.setValidationMode( ""export_only"" );"
+"#% impex.setLocale( new Locale( ""en"" , """" ) );"
+#  -------------------------------------------------------
+
+"#% impex.setTargetFile( ""Product.csv"");"
+insert_update Product;pk[unique=true];code;offlineDate
+"#% impex.exportItemsFlexibleSearch( ""SELECT {p:pk}, {p:code}, {p:offlineDate} FROM {Product as p} WHERE CURDATE() >= DATE(DATE_ADD({p:offlineDate}, INTERVAL -@@@DAYS@@@ DAY))"");"

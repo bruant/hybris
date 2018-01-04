@@ -1,0 +1,3 @@
+insert_update Product;pk[unique=true];code;offlineDate
+;8796093054977;1234567;Jan 4, 2018 12:00:00 AM
+;8796093087745;1234567;Jan 4, 2018 12:00:00 AM

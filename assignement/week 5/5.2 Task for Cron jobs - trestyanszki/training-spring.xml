@@ -13,14 +13,6 @@
 
 	<context:component-scan base-package="org.training" />
 
-
-	<bean id="dobInterceptor" class="org.training.interceptor.DoBInterceptor" />
-
-	<bean id="dobInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
-		<property name="interceptor" ref="dobInterceptor" />
-		<property name="typeCode" value="User" />
-	</bean>
-
 	<bean id="exportProductJob" class="org.training.cron.ExportProductJob" parent="abstractJobPerformable"/>
 
 </beans>
