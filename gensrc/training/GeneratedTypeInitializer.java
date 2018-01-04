@@ -46,6 +46,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		// performCreateTypes
 	
 	
+		createItemType(
+			"ExportProductCronJob",
+			"CronJob",
+			org.training.cron.ExportProductCronJob.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 	}
 
 	/**
@@ -60,6 +70,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 	
 				single_createattr_User_dateOfBirth();
+			
+				single_createattr_ExportProductCronJob_xDaysToGoOffline();
+			
+				single_createattr_ExportProductCronJob_impexFile();
 			
 
 	}
@@ -76,6 +90,40 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					null,
 					"java.util.Date",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_ExportProductCronJob_xDaysToGoOffline() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"ExportProductCronJob", 
+					"xDaysToGoOffline",  
+					null,
+					"java.lang.Integer",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PRIMITIVE_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_ExportProductCronJob_impexFile() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"ExportProductCronJob", 
+					"impexFile",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
 				);
@@ -105,6 +153,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 			single_setAttributeProperties_User_dateOfBirth();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"ExportProductCronJob",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_ExportProductCronJob_xDaysToGoOffline();
+		
+			single_setAttributeProperties_ExportProductCronJob_impexFile();
+		
 	}
 
 
@@ -122,6 +187,50 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								false, 
 								null,
 								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_ExportProductCronJob_xDaysToGoOffline() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"ExportProductCronJob", 
+								"xDaysToGoOffline",
+								false, 
+								Integer.valueOf(5),
+								"Integer.valueOf(5)",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_ExportProductCronJob_impexFile() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"ExportProductCronJob", 
+								"impexFile",
+								false, 
+								String.valueOf("exportproduct.impex"),
+								"String.valueOf(\"exportproduct.impex\")",
 								null,
 								true,
 								true,

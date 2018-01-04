@@ -2,15 +2,12 @@
 <!--
  [y] hybris Platform
 
- Copyright (c) 2000-2013 hybris AG
- All rights reserved.
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
 
- This software is the confidential and proprietary information of hybris
+ This software is the confidential and proprietary information of SAP
  ("Confidential Information"). You shall not disclose such Confidential
  Information and shall use it only in accordance with the terms of the
- license agreement you entered into with hybris.
-
-
+ license agreement you entered into with SAP.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
@@ -443,7 +440,12 @@
                     </xs:enumeration>
                     <xs:enumeration value="hsqldb">
                         <xs:annotation>
-                            <xs:documentation>Create index only on HSQL databsse</xs:documentation>
+                            <xs:documentation>Create index only on HSQL database</xs:documentation>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="postgresql">
+                        <xs:annotation>
+                            <xs:documentation>Create index only on PostgreSQL database</xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
                 </xs:restriction>
@@ -602,6 +604,9 @@
 		<xs:annotation>
 			<xs:documentation>Allows to configure alternative methods at generated model.</xs:documentation>
 		</xs:annotation>
+		<xs:sequence minOccurs="0" maxOccurs="1">
+			<xs:element name="nullDecorator" type="xs:string"/>
+		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required">
 			<xs:annotation>
 				<xs:documentation>
@@ -614,6 +619,13 @@
 				<xs:documentation>
 					Will the method be marked deprecated? Default is
 					false.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deprecatedSince" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Version since when this method is marked as deprecated.
 				</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>

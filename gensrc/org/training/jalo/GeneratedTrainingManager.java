@@ -1,22 +1,27 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 2017.12.28. 0:11:41                         ---
+ * --- Generated at Jan 4, 2018 5:52:55 AM                      ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
 
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
+import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.security.Principal;
+import de.hybris.platform.jalo.type.ComposedType;
+import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.platform.jalo.user.User;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.TrainingConstants;
+import org.training.cron.ExportProductCronJob;
 
 /**
  * Generated class for type <code>TrainingManager</code>.
@@ -43,6 +48,32 @@ public abstract class GeneratedTrainingManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public ExportProductCronJob createExportProductCronJob(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingConstants.TC.EXPORTPRODUCTCRONJOB );
+			return (ExportProductCronJob)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating ExportProductCronJob : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public ExportProductCronJob createExportProductCronJob(final Map attributeValues)
+	{
+		return createExportProductCronJob( getSession().getSessionContext(), attributeValues );
 	}
 	
 	/**
