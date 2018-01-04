@@ -26,7 +26,7 @@
 
 	<bean id="dobInterceptor" class="org.training.interceptor.DoBInterceptor"/>
 
-   <bean id="StadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+   <bean id="dobInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
     	<property name="interceptor" ref="dobInterceptor" />
     	<property name="typeCode" value="User" />
 	</bean>
