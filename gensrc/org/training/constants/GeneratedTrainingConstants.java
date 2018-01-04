@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jan 4, 2018 5:52:55 AM                      ---
+ * --- Generated at Jan 4, 2018 3:28:28 PM                      ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -20,6 +20,10 @@ public class GeneratedTrainingConstants
 	}
 	public static class Attributes
 	{
+		public static class Product
+		{
+			public static final String METAINFO = "metaInfo".intern();
+		}
 		public static class User
 		{
 			public static final String DATEOFBIRTH = "dateOfBirth".intern();
