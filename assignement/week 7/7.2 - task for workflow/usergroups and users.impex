@@ -1,0 +1,8 @@
+INSERT_UPDATE UserGroup;uid[unique=true];locname[lang=de];locname[lang=en];locname[lang=pl];locname[lang=fr];hmcLoginDisabled;groups(uid)
+;userManagerGroup;User manager;User manager;User manager;User manager;false;employeegroup
+;supervisorManagerGroup;Supervisors;Supervisors;Supervisors;Supervisors;false;employeegroup
+
+INSERT_UPDATE Player;uid[unique=true];name;country(isocode);sessionLanguage(isocode);password;eMail;profilepicture(code);groups(uid);hmclogindisabled[default=true];confirmed[default=true,virtual=true]
+;usermanager;Manager;DE;en;1234;manager@mille.com;;cuppyplayers,cuppyadmins,userManagerGroup;false
+;supervisor;Supervisor;DE;en;1234;supervisor@mille.com;;cuppyplayers,cuppyadmins,supervisorManagerGroup;false
+

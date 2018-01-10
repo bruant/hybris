@@ -1,0 +1,38 @@
+"INSERT_UPDATE WorkflowTemplate";"code[unique=true]";"name[lang=en]";"owner(uid)";"description[lang=en]";"activationscript";"visibleForPrincipals(uid)";;;
+;"NewUserRegistration";"New User Registration";"admin";;;"supervisorManagerGroup,userManagerGroup";;;
+ 
+ 
+"INSERT_UPDATE WorkflowActionTemplate";"code[unique=true]";"name[lang=en]";"description[lang=en]";"principalAssigned(uid)";"workflow(code)[unique=true]";"sendEmail";"emailAddress";"rendererTemplate(code)";"actionType(code)"
+;"Manager_Confirm";"Confirmation by a manager";;"userManagerGroup";"NewUserRegistration";"false";;;"start"
+;"Supervisor_Confirm";"Confirmation by a supervisor";;"supervisorManagerGroup";"NewUserRegistration";"false";;;"normal"
+;"Registration_End";"Ende";"End";;;"supervisorManagerGroup,userManagerGroup";"NewUserRegistration";"false";;;"end"
+;"Manager_Confirm_Positive";"User confirmed by a manager";;"userManagerGroup";"NewUserRegistration";"false";;;"normal"
+ 
+ 
+"INSERT_UPDATE AutomatedWorkflowActionTemplate";"code[unique=true]";"name[lang=en]";"description[lang=de]";"description[lang=en]";"principalAssigned(uid)";"workflow(code)[unique=true]";"sendEmail";"emailAddress";"rendererTemplate(code)";"actionType(code)";jobHandler
+;"Supervisor_Confirm_Positive";"User confirmed by supervisor";;;"supervisorManagerGroup";"NewUserRegistration";"false";;;"normal";registrationConfirmationActionJob
+;"Supervisor_Confirm_Negative";"User declined by supervisor";;;"supervisorManagerGroup";"NewUserRegistration";"false";;;"normal";registrationDeclineActionJob
+;"Manager_Confirm_Negative";"User declined by manager";;;"supervisorManagerGroup";"NewUserRegistration";"false";;;"normal";registrationDeclineActionJob
+ 
+ 
+"INSERT_UPDATE WorkflowDecisionTemplate";"code[unique=true]";"name[lang=en]";"actionTemplate(code)";"description[allownull=true]";;;;;;
+;"NUR001";"Confirm user";"Manager_Confirm";;;;;;;
+;"NUR002";"Decline user";"Manager_Confirm";;;;;;;
+;"NUR003";"Confirm user";"Supervisor_Confirm";;;;;;;
+;"NUR004";"Decline user";"Supervisor_Confirm";;;;;;;
+;"NUR005";"End";"Supervisor_Confirm_Positive";;;;;;;
+;"NUR006";"End";"Supervisor_Confirm_Negative";;;;;;;
+;"NUR007";"Confirm user";"Manager_Confirm_Positive";;;;;;;
+;"NUR008";"End";"Manager_Confirm_Negative";;;;;;;
+ 
+ 
+"INSERT_UPDATE WorkflowActionTemplateLinkTemplateRelation";"source(code)[unique=true]";"target(code)[unique=true]";"andConnectionTemplate";"qualifier";;;;;;;
+;"NUR001";"Supervisor_Confirm";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR002";"Manager_Confirm_Negative";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR003";"Supervisor_Confirm_Positive";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR004";"Supervisor_Confirm_Negative";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+
+;"NUR005";"Registration_End";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR006";"Registration_End";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR007";"Supervisor_Confirm";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
+;"NUR008";"Registration_End";"false";"WorkflowActionTemplateLinkTemplateRelation";;;;;;;
