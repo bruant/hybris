@@ -23,4 +23,8 @@
 
 	<bean id="exportProductJob" class="org.training.cron.ExportProductJob" parent="abstractJobPerformable"/>
 
+   <!-- bean name="defaultCacheController" class="org.training.controller.ClearCacheController" lazy-init="true" >
+		<constructor-arg name="configuration" ref="cacheConfiguration" />
+   </bean -->
+
 </beans>
