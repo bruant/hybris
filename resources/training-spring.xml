@@ -23,8 +23,13 @@
 
 	<bean id="exportProductJob" class="org.training.cron.ExportProductJob" parent="abstractJobPerformable"/>
 
-   <!-- bean name="defaultCacheController" class="org.training.controller.ClearCacheController" lazy-init="true" >
-		<constructor-arg name="configuration" ref="cacheConfiguration" />
-   </bean -->
+	<bean id="productUpdateService" class="org.training.service.ProductUpdateServiceImpl" parent="productService">
+		<!-- property name="productDao" ref="productDao"/>
+		<property name="unitDao" ref="unitDao"/>
+		<property name="sessionService" ref="sessionService"/>
+		<property name="txManager" ref="txManager"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="priceService" ref="priceService"/-->
+    </bean>
 
 </beans>
