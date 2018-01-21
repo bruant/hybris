@@ -1,0 +1,3 @@
+# Constraint
+insert_update NotUnderAgeConstraint;active[allownull=true];annotation;descriptor(enclosingType(code),qualifier);id[unique=true,allownull=true];message[lang=de];message[lang=en];owner(pk)[allownull=true];qualifier;severity(code,itemtype(code));target;type(code)
+;true;org.training.constraints.NotUnderAge;Customer:age;customerNotUnderAgeConstraint;;Customer cannot be under 18!;;age;ERROR:Severity;de.hybris.platform.core.model.user.CustomerModel;Customer

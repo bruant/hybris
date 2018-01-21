@@ -8,36 +8,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
 
-	<type name="User" mode="append">
-		<organizer>
-			<editor>
-				<tab name="tab.common" id="tab_user_properties" mode="replace"
-					position="0">
-					<section name="properties" mode="replace">
-						<listlayout>
-							<attribute name="description">
-								<textareaeditor expanded="true" rows="3" />
-							</attribute>
-							<attribute name="dateOfBirth">
-								<dateeditor/>
-							</attribute>
-							<attribute name="sessionLanguage" />
-							<attribute name="sessionCurrency" />
-							<attribute name="groups">
-								<referencecollectioneditor
-									showsearcheditor="true">
-									<itemlayout>
-										<attribute name="uid" width="150" />
-										<attribute name="locname" width="150" />
-									</itemlayout>
-								</referencecollectioneditor>
-							</attribute>
-						</listlayout>
-					</section>
-				</tab>
-			</editor>
-		</organizer>
-	</type>
 
 	<type name="Customer" mode="append">
 		<organizer>
